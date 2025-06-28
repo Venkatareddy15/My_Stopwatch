@@ -1,0 +1,287 @@
+/* General Styling */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.stopwatch {
+  font-family: 'Roboto', sans-serif;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 500px;
+  border: 2px solid #333;
+  background: black;
+  color: white;
+  box-shadow: 0 0 20px #00e5ff, 0 0 40px #00bcd4, 0 0 60px #0097a7;
+  animation: gradient-shift 5s infinite;
+}
+
+.stopwatch.dark {
+  background: black;
+  color: white;
+  border-color: #444;
+  box-shadow: 0 0 20px #00acc1, 0 0 40px #00838f, 0 0 60px #006064;
+  animation: gradient-shift-dark 5s infinite;
+}
+
+/* Position the SkillCraft Stopwatch title outside of the box */
+.stopwatch h1 {
+  position: relative;
+  top: -2rem;
+  font-size: 2.5rem;
+  color: #ff9800;
+  text-shadow: 0 0 10px #ff9800, 0 0 20px #ff9800;
+}
+
+/* Time Display */
+.time-display {
+  font-size: 3rem;
+  margin: 1.5rem 0;
+  color: inherit;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.controls button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #646cff;
+  color: white;
+  transition: all 0.3s ease;
+  animation: button-fade-in 0.5s ease-in-out;
+  box-shadow: 0 0 10px #00e5ff, 0 0 20px #00bcd4;
+}
+
+.controls button:hover {
+  background-color: #4a4a9e;
+  transform: scale(1.05);
+  animation: button-hover-bounce 0.3s ease-in-out;
+  box-shadow: 0 0 15px #0097a7, 0 0 30px #00838f;
+}
+
+.controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Add distinct styling for one button */
+.controls button.special {
+  background-color: #ff6f61;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #ff3b3b;
+  transition: all 0.3s ease;
+}
+
+.controls button.special:hover {
+  background-color: #ff3b3b;
+  transform: scale(1.1);
+}
+
+/* Lap Times */
+.laps {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.laps h2 {
+  font-size: 1.8rem;
+  color: inherit;
+  margin-bottom: 1rem;
+}
+
+.laps ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.laps li {
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: lap-slide-in 0.5s ease-in-out;
+}
+
+.stopwatch.dark .laps li {
+  background-color: #444;
+  border-color: #666;
+}
+
+/* Add advanced styling for the table */
+.laps table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.laps th, .laps td {
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.laps th {
+  background-color: #646cff;
+  color: white;
+  font-weight: bold;
+}
+
+.laps td {
+  background-color: #fff;
+  color: #333;
+}
+
+.stopwatch.dark .laps th {
+  background-color: #4a4a9e;
+}
+
+.stopwatch.dark .laps td {
+  background-color: #444;
+  color: #f9f9f9;
+}
+
+.laps tr:nth-child(even) td {
+  background-color: #e3e3e3;
+}
+
+.stopwatch.dark .laps tr:nth-child(even) td {
+  background-color: #555;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient-shift-dark {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes button-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes button-hover-bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lap-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stopwatch {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .time-display {
+    font-size: 2.5rem;
+  }
+
+  .controls button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .laps h2 {
+    font-size: 1.5rem;
+  }
+}
